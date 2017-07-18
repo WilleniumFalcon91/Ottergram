@@ -23,3 +23,22 @@ function combineThumbnailInformation (thumbnail) {
     getImageInformation(getImageFromThumbnail(thumbnail), getTitleFromThumbnail(thumbnail));
 }
 
+function addThumbnailClickEvent(thumbnail) {
+    thumbnail.addEventListener('click', function (event) {
+        event.preventDefault();
+        combineThumbnailInformation(thumbnail);
+    });
+}
+
+function turnThumbnailsIntoArray() {
+    var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+    var thumbnailsArray = [].slice.call(thumbnails);
+    return thumbnailsArray;
+}
+
+function makeItHappen() {
+    var thumbnails = turnThumbnailsIntoArray();
+    thumbnails.forEach(addThumbnailClickEvent);
+}
+
+makeItHappen();

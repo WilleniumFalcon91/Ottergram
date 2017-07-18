@@ -36,9 +36,19 @@ function turnThumbnailsIntoArray() {
     return thumbnailsArray;
 }
 
+
+function randomLoadImage(luckyOtter) {
+    document.addEventListener('DOMContentLoaded', function (event) {
+        var thumbnails = turnThumbnailsIntoArray();
+        var number = Math.floor(Math.random() * (thumbnails.length - 1));
+        combineThumbnailInformation(thumbnails[number]); 
+    });
+}
+
 function makeItHappen() {
     var thumbnails = turnThumbnailsIntoArray();
     thumbnails.forEach(addThumbnailClickEvent);
+    randomLoadImage();
 }
 
 makeItHappen();

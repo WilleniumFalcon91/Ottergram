@@ -18,3 +18,8 @@ function getImageFromThumbnail(thumbnail) {
 function getTitleFromThumbnail(thumbnail) {
     return  thumbnail.getAttribute('data-title-url');
 }
+
+function combineThumbnailInformation (thumbnail) {
+    getImageInformation(getImageFromThumbnail(thumbnail), getTitleFromThumbnail(thumbnail));
+}
+

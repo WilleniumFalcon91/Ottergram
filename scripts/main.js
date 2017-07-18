@@ -16,17 +16,17 @@ function getImageFromThumbnail(thumbnail) {
 }
 
 function getTitleFromThumbnail(thumbnail) {
-    return  thumbnail.getAttribute('data-title-url');
+    return  thumbnail.getAttribute('data-image-title');
 }
 
 function combineThumbnailInformation (thumbnail) {
     getImageInformation(getImageFromThumbnail(thumbnail), getTitleFromThumbnail(thumbnail));
 }
 
-function addThumbnailClickEvent(thumbnail) {
-    thumbnail.addEventListener('click', function (event) {
+function addThumbnailClickEvent(thumb) {
+    thumb.addEventListener('click', function (event) {
         event.preventDefault();
-        combineThumbnailInformation(thumbnail);
+        combineThumbnailInformation(thumb);
     });
 }
 

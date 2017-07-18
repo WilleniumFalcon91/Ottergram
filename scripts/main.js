@@ -10,3 +10,11 @@ function getImageInformation(imageUrl, titleText) {
     var imageTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
     imageTitle.textContent = titleText;
 }
+
+function getImageFromThumbnail(thumbnail) {
+    return  thumbnail.getAttribute('data-image-url');
+}
+
+function getTitleFromThumbnail(thumbnail) {
+    return  thumbnail.getAttribute('data-title-url');
+}
